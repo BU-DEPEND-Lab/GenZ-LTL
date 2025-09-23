@@ -1,0 +1,8 @@
+<mujoco>
+  <asset>
+    <material name="green" rgba=".3 .6 .3 .3"/>
+    <material name="yellow" rgba=".6 .6 .3 .3"/>
+    <material name="red" rgba=".6 .3 .3 .3"/>
+    <material name="blue" rgba=".3 .3 .6 .3"/>
+  </asset>
+</mujoco>
