@@ -1,0 +1,76 @@
+{
+    "model_config": {
+        "name": "PointLtlSafety2-v0",
+        "config": {
+            "actor": {
+                "layers": [
+                    64,
+                    64,
+                    64
+                ],
+                "activation": {
+                    "hidden": "ReLU",
+                    "output": "Tanh"
+                },
+                "state_dependent_std": true
+            },
+            "critic": {
+                "layers": [
+                    64,
+                    64
+                ],
+                "activation": "ReLU"
+            },
+            "cost_critic": {
+                "layers": [
+                    64,
+                    64
+                ],
+                "activation": "Tanh"
+            },
+            "lagrangian": {
+                "layers": [
+                    64,
+                    64
+                ],
+                "activation": "Softplus"
+            },
+            "ltl_embedding_dim": 16,
+            "num_rnn_layers": 1,
+            "env_net": {
+                "layers": [
+                    128,
+                    64
+                ],
+                "activation": "Tanh"
+            },
+            "set_net": {
+                "layers": [
+                    32,
+                    16
+                ],
+                "activation": "ReLU"
+            }
+        }
+    },
+    "curriculum": "PointLtlSafety2-v0",
+    "pretraining_experiment": null,
+    "freeze_pretrained": false,
+    "log_csv": true,
+    "log_wandb": false,
+    "save": true,
+    "rco": {
+        "epochs": 80,
+        "batch_size": 2048,
+        "steps_per_process": 4096,
+        "discount": 0.998,
+        "lr": 0.0001,
+        "gae_lambda": 0.95,
+        "entropy_coef": 0.003,
+        "value_loss_coef": 1.0,
+        "max_grad_norm": 0.5,
+        "optim_eps": 1e-08,
+        "clip_eps": 0.2,
+        "target_kl": 0.01
+    }
+}

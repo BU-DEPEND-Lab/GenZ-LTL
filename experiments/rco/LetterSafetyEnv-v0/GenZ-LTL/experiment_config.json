@@ -1,0 +1,72 @@
+{
+    "model_config": {
+        "name": "LetterSafetyEnv-v0",
+        "config": {
+            "actor": {
+                "layers": [
+                    64,
+                    64,
+                    64
+                ],
+                "activation": "ReLU",
+                "state_dependent_std": false
+            },
+            "critic": {
+                "layers": [
+                    64,
+                    64
+                ],
+                "activation": "Softplus"
+            },
+            "cost_critic": {
+                "layers": [
+                    64,
+                    64
+                ],
+                "activation": "Tanh"
+            },
+            "lagrangian": {
+                "layers": [
+                    64,
+                    64
+                ],
+                "activation": "Softplus"
+            },
+            "env_net": {
+                "channels": [
+                    16,
+                    32,
+                    64
+                ],
+                "kernel_size": [
+                    2,
+                    2
+                ],
+                "activation": "ReLU"
+            }
+        }
+    },
+    "curriculum": "LetterSafetyEnv-v0",
+    "pretraining_experiment": null,
+    "freeze_pretrained": false,
+    "log_csv": true,
+    "log_wandb": false,
+    "save": true,
+    "rco": {
+        "epochs": 80,
+        "batch_size": 256,
+        "steps_per_process": 128,
+        "discount": 0.94,
+        "lr": 0.0003,
+        "gae_lambda": 0.95,
+        "entropy_coef": 0.01,
+        "value_loss_coef": 1.0,
+        "max_grad_norm": 0.5,
+        "optim_eps": 1e-08,
+        "clip_eps": 0.2,
+        "target_kl": 0.015,
+        "target_cost": -0.05,
+        "min_lag": 0.01,
+        "max_lag": 5
+    }
+}

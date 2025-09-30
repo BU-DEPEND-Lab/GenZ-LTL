@@ -36,7 +36,7 @@ All experiment logs and model checkpoints will be stored in the `experiments` di
 
 ## Evaluation
 
-**The pre-trained models are available [here](https://drive.google.com/drive/folders/1N7fSGZOlW_A5gK2JWPD2Bup1GCTcqnPH?usp=sharing).**
+**The pre-trained models are located in the `experiment` folder.**
 The evaluation scripts are in `src/evaluation`. To evaluate a trained model on a specific LTL formula:
 ```bash
 PYTHONPATH=src/ python src/evaluation/simulate.py --env <env_name> --exp GenZ-LTL --seed 1 --formula <LTL_spec>

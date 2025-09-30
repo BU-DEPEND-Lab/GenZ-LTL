@@ -18,9 +18,6 @@ envs/safety-gym/mujoco200_linux
 **/logs**/**
 **/misc/**
 
-*.pth
-
-
 **/**.pt
 # C extensions
 *.so
@@ -148,6 +145,3 @@ dmypy.json
 .pyre/
 
 cache/
-experiments/
-results_finite/
-results_infinite/
