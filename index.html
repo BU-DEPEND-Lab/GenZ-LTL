@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="One Subgoal at a Time: Zero-Shot Generalization to Arbitrary Linear Temporal Logic Requirements in Multi-Task Reinforcement Learning">
+  <meta name="keywords" content="Linear Temporal Logic, Safe Reinforcement Learning, Zero-shot Generalization">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>One Subgoal at a Time: Zero-Shot Generalization to Arbitrary Linear Temporal Logic Requirements in Multi-Task Reinforcement Learning</title>
+
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/logo.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">One Subgoal at a Time: Zero-Shot Generalization to Arbitrary Linear Temporal Logic Requirements in Multi-Task Reinforcement Learning</h1>
+          <div class="has-text-centered" style="font-size: 2rem; color: black;">
+            <b>NeurIPS 2025</b>
+          </div>
+
+          <div class="is-size-4 publication-authors">
+            <span class="author-block">
+
+          </div>
+
+          <div class="is-size-4 publication-authors">
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=TxBFprEAAAAJ&hl=en">Zijian Guo</a><sup>1 </sup>
+            </span>,
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=4Q07NXsAAAAJ&hl=en">İlker İşık</a><sup>2 </sup>
+            </span>,
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=q5naPLUAAAAJ&hl=en">H. M. Sabbir Ahmad</a><sup>1 </sup>
+            </span>,
+            <span class="author-block">
+              <a href="https://www.bu.edu/eng/profile/wenchao-li-ph-d/">Wenchao Li</a><sup>1, 2 </sup>
+            </span>
+            
+          </div>
+
+          <div class="is-size-5 publication-affiliations">
+            <span class="author-block"> <sup>1</sup> Division of Systems Engineering, Boston University </span>
+            &nbsp &nbsp
+            <span class="author-block"> <sup>2</sup> Department of Electrical and Computer Engineering, Boston University </span>
+
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://www.arxiv.org/abs/2508.01561"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/BU-DEPEND-Lab/GenZ-LTL"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span >Code </span>
+                  </a>
+              </span>
+
+              <!-- BibTex Link. -->
+              <span class="link-block">
+                <a href="#" id="bibtex-btn" class="external-link button is-normal is-rounded is-dark" onclick="copyBibTeX(); return false;">
+                  <span class="icon">
+                      <i class="fas fa-book"></i>
+                  </span>
+                  <span>BibTeX</span>
+                </a>
+              </span>
+
+              <script>
+              function copyBibTeX() {
+                const bibtexText = `@inproceedings{guo2025one,
+                title={One Subgoal at a Time: Zero-Shot Generalization to Arbitrary Linear Temporal Logic Requirements in Multi-Task Reinforcement Learning},
+                author={Zijian Guo and Ilker I\\c{s}{\\i}k and H. M. Sabbir Ahmad and Wenchao Li},
+                booktitle={Advances in Neural Information Processing Systems},
+                year={2025}
+              }`;
+
+                navigator.clipboard.writeText(bibtexText).then(function() {
+                  const btn = document.getElementById('bibtex-btn');
+                  const originalText = btn.querySelector('span:last-child').textContent;
+                  btn.querySelector('span:last-child').textContent = 'Copied!';
+                  
+                  setTimeout(() => {
+                    btn.querySelector('span:last-child').textContent = originalText;
+                  }, 2000);
+                }).catch(function(err) {
+                  console.error('Failed to copy text: ', err);
+                  fallbackCopyTextToClipboard(bibtexText);
+                });
+              }
+
+              function fallbackCopyTextToClipboard(text) {
+                const textArea = document.createElement("textarea");
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                
+                try {
+                  const successful = document.execCommand('copy');
+                  if (successful) {
+                    const btn = document.getElementById('bibtex-btn');
+                    const originalText = btn.querySelector('span:last-child').textContent;
+                    btn.querySelector('span:last-child').textContent = 'Copied!';
+                    
+                    setTimeout(() => {
+                      btn.querySelector('span:last-child').textContent = originalText;
+                    }, 2000);
+                  }
+                } catch (err) {
+                  console.error('Fallback: Oops, unable to copy', err);
+                }
+                
+                document.body.removeChild(textArea);
+              }
+              </script>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-2">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+           Generalizing to complex and temporally extended task objectives and safety constraints remains a critical challenge 
+           in reinforcement learning (RL). Linear temporal logic (LTL) offers a unified formalism to specify such requirements, 
+           yet existing methods are limited in their abilities to handle nested long-horizon tasks and safety constraints, 
+           and cannot identify situations when a subgoal is not satisfiable and an alternative should be sought. 
+           In this paper, we introduce GenZ-LTL, a method that enables zero-shot generalization to arbitrary LTL specifications. 
+           GenZ-LTL leverages the structure of Büchi automata to decompose an LTL task specification into sequences of reach-avoid subgoals. 
+           Contrary to the current state-of-the-art method that conditions on subgoal sequences, 
+           we show that it is more effective to achieve zero-shot generalization by solving these reach-avoid problems 
+           one subgoal at a time through proper safe RL formulations. In addition, we introduce a novel subgoal-induced 
+           observation reduction technique that can mitigate the exponential complexity of subgoal-state combinations under 
+           realistic assumptions. Empirical results show that GenZ-LTL substantially outperforms existing methods in zero-shot
+            generalization to unseen LTL specifications.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column">
+        <h2 class="title is-2">Method Overview</h2>
+        <div class="hero-body" style="text-align: center">
+          <div class="columns is-centered">
+            <img src="./static/images/overview.png" alt="Description of the image" style="max-width: 100%; height: auto;" />
+          </div>
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            In this work, we propose a method, called GenZ-LTL, for learning to satisfy arbitrary linear temporal logic specifications. 
+            During training, we sample reach-avoid subgoals, where each subgoal specifies <i>reach</i> subgoal and a set of <i>avoid</i> subgoals. 
+            To reduce complexity, we apply a subgoal-induced observation reduction, which simplifies the state representation when possible. 
+            We then train a general subgoal-conditioned policy together with value functions.
+            At test time, given a target LTL task specification, we first construct an equivalent Büchi automaton, 
+            and then extract a set of reach-avoid subgoals based on the current state. 
+            Each candidate subgoal is evaluated using the learned value functions, 
+            and the optimal one is selected and executed.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column">
+        <h2 class="title is-2">Main Results</h2>
+        
+        <!-- First image with caption -->
+        <div style="text-align: center; margin-bottom: 20px;">
+          <img src="./static/images/finite-horizon_tasks.png" alt="Finite Horizon Tasks Results" style="max-width: 100%; height: auto;" />
+          <p style="margin-top: 8px;"><em>Finite Horizon Tasks: success rate η<sub>s</sub>, violation rate η<sub>v</sub>, and average steps μ to satisfy the specifications</em></p>
+        </div>
+        
+        <!-- Second image with caption -->
+        <div style="text-align: center; margin-bottom: 30px;">
+          <img src="./static/images/infinite-horizon_tasks.png" alt="Infinite Horizon Tasks Results" style="max-width: 70%; height: auto;" />
+          <p style="margin-top: 8px;"><em>Infinite Horizon Tasks: violation rate η<sub>v</sub> and average number of visits to accepting states μ<sub>acc</sub></em></p>
+        </div>
+        
+        <div class="content has-text-justified">
+          <p>
+            As shown in the Tables, for finite-horizon tasks, GenZ-LTL consistently outperforms the baselines in both success rate 
+            and violation rate. In most tasks, it also learns more efficient policies, requiring fewer steps to satisfy a given specification. 
+            For infinite-horizon tasks, GenZ-LTL again achieves lower violation rates and a higher average number of visits to the accepting state, 
+            demonstrating improved efficiency over the baselines. We also evaluate the zero-shot generalization performance of GenZ-LTL on 
+            increasing complexity of the LTL specifications and environment, the results still show that GenZ-LTL significantly outperforms the baselines.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column">
+        <h2 class="title is-2">Visualizations</h2>
+        <div class="content has-text-justified" style="margin-top: 30px;">
+          <p>
+            We present visualization results of the policy learned by GenZ-LTL in the Zone environment. 
+            Our method consistently achieves the desired behavior under both complex finite-horizon and infinite-horizon specifications.
+          </p>
+        </div>
+        <!-- Grid of 6 GIFs in 2 rows, 3 columns -->
+        <div class="columns is-multiline is-centered">
+          <!-- First row -->
+          <div class="column is-one-third has-text-centered" style="display: flex; flex-direction: column; align-items: center;">
+            <div style="align-self: flex-start; width: 100%; text-align: center;">
+              <img src="./static/images/zone_spec1.gif" alt="Visualization 1" style="max-width: 100%; height: auto;" />
+              <p style="margin-top: 8px;">!green U ((blue | magenta) & (!green U yellow))</p>
+            </div>
+          </div>
+          
+          <div class="column is-one-third has-text-centered" style="display: flex; flex-direction: column; align-items: center;">
+            <div style="align-self: flex-start; width: 100%; text-align: center;">
+              <img src="./static/images/zone_spec5.gif" alt="Visualization 5" style="max-width: 100%; height: auto;" />
+              <p style="margin-top: 8px;">F (green & (!(blue | yellow) U (magenta & (!yellow U blue)))) & F (!green U yellow)</p>
+            </div>
+          </div>
+
+          <div class="column is-one-third has-text-centered" style="display: flex; flex-direction: column; align-items: center;">
+            <div style="align-self: flex-start; width: 100%; text-align: center;">
+              <img src="./static/images/zone_spec2.gif" alt="Visualization 2" style="max-width: 100%; height: auto;" />
+              <p style="margin-top: 8px;">!(magenta | yellow) U (blue & (!green U (yellow & F (green & (!blue U magenta)))))</p>
+            </div>
+          </div>
+          
+          <!-- Second row -->
+          <div class="column is-one-third has-text-centered" style="display: flex; flex-direction: column; align-items: center;">
+            <div style="align-self: flex-start; width: 100%; text-align: center;">
+              <img src="./static/images/zone_spec4.gif" alt="Visualization 3" style="max-width: 100%; height: auto;" />
+              <p style="margin-top: 8px;">FG yellow & G !(green | blue | magenta)</p>
+            </div>
+          </div>
+          
+          <div class="column is-one-third has-text-centered" style="display: flex; flex-direction: column; align-items: center;">
+            <div style="align-self: flex-start; width: 100%; text-align: center;">
+              <img src="./static/images/zone_spec3.gif" alt="Visualization 4" style="max-width: 100%; height: auto;" />
+              <p style="margin-top: 8px;">GF blue & GF green & G !(yellow | magenta)</p>
+            </div>
+          </div>
+
+          <div class="column is-one-third has-text-centered" style="display: flex; flex-direction: column; align-items: center;">
+            <div style="align-self: flex-start; width: 100%; text-align: center;">
+              <img src="./static/images/zone_spec6.gif" alt="Visualization 6" style="max-width: 100%; height: auto;" />
+              <p style="margin-top: 8px;">GF blue & GF yellow & GF green & G !magenta</p>
+            </div>
+          </div>
+
+        </div>
+        
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p style="text-align: center">
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
