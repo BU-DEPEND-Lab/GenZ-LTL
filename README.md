@@ -10,7 +10,7 @@ Repo for "<a href="https://www.arxiv.org/abs/2508.01561" target="_blank">GenZ-LT
 
 ## Method
 
-**GenZ-LTL** is an RL framework that enables zero-shot generalization to arbitrary LTL specifications. It leverages Büchi automata to decompose tasks into sequential reach-avoid subgoals and, unlike prior methods that condition on entire subgoal sequences, it solves these reach-avoid problems one subgoal at a time via safe RL formulations of Hamilton–Jacobi (HJ) reachability. In addition, a subgoal-induced observation reduction further mitigates the exponential complexity of subgoal–state combinations.
+**GenZ-LTL** is an RL framework that enables zero-shot generalization to arbitrary LTL specifications. It leverages Büchi automata to decompose tasks into sequential reach-avoid subgoals and, unlike prior methods that condition on entire subgoal sequences or the automata, it solves these reach-avoid problems one subgoal at a time via a safe RL formulation based on Hamilton–Jacobi (HJ) reachability. In addition, it uses subgoal-induced observation reduction to further mitigates the exponential complexity of subgoal–state combinations.
 
 ## Installation
 
