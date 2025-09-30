@@ -52,6 +52,33 @@ PYTHONPATH=src/ python src/evaluation/eval_test_tasks_infinite.py --exp GenZ-LTL
 ```
 The results will be stored in the `results_finite` and `results_infinite` directories, respectively.
 
+## Visualizations
+We present visualization results of the policy learned by GenZ-LTL in the Zone environment. The method consistently achieves the desired behavior under both complex finite-horizon and infinite-horizon specifications.
+
+<table align="center" style="width:100%">
+  <tr>
+    <td align="center" valign="top" width="50%">
+      <img src="vis/zone_spec1.gif" alt="Spec 1" width="90%"><br>
+      !green U ((blue | magenta) & (!green U yellow))
+    </td>
+    <td align="center" valign="top" width="50%">
+      <img src="vis/zone_spec2.gif" alt="Spec 2" width="90%"><br>
+      !(magenta | yellow) U (blue & (!green U (yellow & F (green & (!blue U magenta)))))
+    </td>
+  </tr>
+  <tr>
+    <td align="center" valign="top" width="50%">
+      <img src="vis/zone_spec4.gif" alt="Spec 4" width="90%"><br>
+      FG yellow & G !(green | blue | magenta)
+    </td>
+    <td align="center" valign="top" width="50%">
+      <img src="vis/zone_spec3.gif" alt="Spec 3" width="90%"><br>
+      GF blue & GF green & G !(yellow | magenta)
+    </td>
+  </tr>
+</table>
+
+
 
 ## Bibtex
 
