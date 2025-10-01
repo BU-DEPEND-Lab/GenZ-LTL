@@ -96,7 +96,7 @@
 
               <!-- BibTex Link. -->
               <span class="link-block">
-                <a href="#" id="bibtex-btn" class="external-link button is-normal is-rounded is-dark" onclick="copyBibTeX(); return false;">
+                <a href="#" id="bibtex-btn" class="external-link button is-normal is-rounded is-dark" onclick="toggleBibTeX(); return false;">
                   <span class="icon">
                       <i class="fas fa-book"></i>
                   </span>
@@ -104,26 +104,61 @@
                 </a>
               </span>
 
-              <script>
-              function copyBibTeX() {
-                const bibtexText = `@inproceedings{guo2025one,
-                title={One Subgoal at a Time: Zero-Shot Generalization to Arbitrary Linear Temporal Logic Requirements in Multi-Task Reinforcement Learning},
-                author={Zijian Guo and Ilker I\\c{s}{\\i}k and H. M. Sabbir Ahmad and Wenchao Li},
-                booktitle={Advances in Neural Information Processing Systems},
-                year={2025}
-              }`;
+              <!-- BibTeX Text Box (initially hidden) -->
+              <div id="bibtex-container" style="display: none; margin-top: 20px; width: 100%;">
+                <div class="field">
+                  <label class="label" style="color: white;">BibTeX Citation:</label>
+                  <div class="control">
+                    <textarea id="bibtex-text" class="textarea" readonly style="font-family: monospace; font-size: 0.9em; background-color: #f5f5f5; border: 1px solid #ddd; resize: vertical; min-height: 150px;">@inproceedings{guo2025one,
+  title={One Subgoal at a Time: Zero-Shot Generalization to Arbitrary Linear Temporal Logic Requirements in Multi-Task Reinforcement Learning},
+  author={Zijian Guo and Ilker I\c{s}{\i}k and H. M. Sabbir Ahmad and Wenchao Li},
+  booktitle={Advances in Neural Information Processing Systems},
+  year={2025}
+}</textarea>
+                  </div>
+                  <div class="control" style="margin-top: 10px;">
+                    <button class="button is-small is-primary" onclick="copyBibTeXFromTextarea();">
+                      <span class="icon is-small">
+                        <i class="fas fa-copy"></i>
+                      </span>
+                      <span id="copy-btn-text">Copy to Clipboard</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
 
-                navigator.clipboard.writeText(bibtexText).then(function() {
-                  const btn = document.getElementById('bibtex-btn');
-                  const originalText = btn.querySelector('span:last-child').textContent;
-                  btn.querySelector('span:last-child').textContent = 'Copied!';
+              <script>
+              function toggleBibTeX() {
+                const container = document.getElementById('bibtex-container');
+                const btn = document.getElementById('bibtex-btn');
+                const btnText = btn.querySelector('span:last-child');
+                
+                if (container.style.display === 'none') {
+                  container.style.display = 'block';
+                  btnText.textContent = 'Hide BibTeX';
+                } else {
+                  container.style.display = 'none';
+                  btnText.textContent = 'BibTeX';
+                }
+              }
+
+              function copyBibTeXFromTextarea() {
+                const textarea = document.getElementById('bibtex-text');
+                const copyBtn = document.getElementById('copy-btn-text');
+                
+                textarea.select();
+                textarea.setSelectionRange(0, 99999); // For mobile devices
+                
+                navigator.clipboard.writeText(textarea.value).then(function() {
+                  const originalText = copyBtn.textContent;
+                  copyBtn.textContent = 'Copied!';
                   
                   setTimeout(() => {
-                    btn.querySelector('span:last-child').textContent = originalText;
+                    copyBtn.textContent = originalText;
                   }, 2000);
                 }).catch(function(err) {
                   console.error('Failed to copy text: ', err);
-                  fallbackCopyTextToClipboard(bibtexText);
+                  fallbackCopyTextToClipboard(textarea.value);
                 });
               }
 
@@ -136,13 +171,13 @@
                 
                 try {
                   const successful = document.execCommand('copy');
+                  const copyBtn = document.getElementById('copy-btn-text');
                   if (successful) {
-                    const btn = document.getElementById('bibtex-btn');
-                    const originalText = btn.querySelector('span:last-child').textContent;
-                    btn.querySelector('span:last-child').textContent = 'Copied!';
+                    const originalText = copyBtn.textContent;
+                    copyBtn.textContent = 'Copied!';
                     
                     setTimeout(() => {
-                      btn.querySelector('span:last-child').textContent = originalText;
+                      copyBtn.textContent = originalText;
                     }, 2000);
                   }
                 } catch (err) {
@@ -247,7 +282,43 @@
             demonstrating improved efficiency over the baselines. We also evaluate the zero-shot generalization performance of GenZ-LTL on 
             increasing complexity of the LTL specifications and environment, the results still show that GenZ-LTL significantly outperforms the baselines.
           </p>
+
+          <!-- References Toggle Button -->
+          <p>
+            <a href="#" id="references-btn" onclick="toggleReferences(); return false;" style="color: black; text-decoration: underline; cursor: pointer;">
+              <strong>Show References</strong>
+            </a>
+          </p>
+          
+          <!-- References Content (initially hidden) -->
+          <div id="references-container" style="display: none; margin-top: 15px; padding: 15px; background-color: #f8f9fa; border-left: 4px solid black; border-radius: 4px;">
+            <p style="margin-bottom: 0;">
+              <strong>References:</strong> <br>
+              [LTL2Action] Vaezipoor, Li, Toro Icarte, and McIlraith. "LTL2Action: Generalizing LTL Instructions for Multi-Task RL," ICML 2021. <br>
+              [GCRL-LTL] Qiu, Mao, and Zhu. "Instructing Goal-Conditioned Reinforcement Learning Agents with Temporal Logic Objectives," NeurIPS 2023. <br>
+              [DeepLTL] Jackermeier and Abate. "DeepLTL: Learning to Efficiently Satisfy Complex LTL Specifications for Multi-Task RL," ICLR 2025 (oral). <br>
+              [RAD-embeddings] Yalcinkaya, Lauffer, Vazquez-Chanlatte, and Seshia. "Compositional Automata Embeddings for Goal-Conditioned Reinforcement Learning," NeurIPS 2024.
+            </p>
+          </div>
         </div>
+
+        <script>
+        function toggleReferences() {
+          const container = document.getElementById('references-container');
+          const btn = document.getElementById('references-btn');
+          const btnText = btn.querySelector('strong');
+          
+          if (container.style.display === 'none') {
+            container.style.display = 'block';
+            btnText.textContent = 'Hide References';
+          } else {
+            container.style.display = 'none';
+            btnText.textContent = 'Show References';
+          }
+        }
+        </script>
+
+
       </div>
     </div>
   </div>
