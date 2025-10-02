@@ -19,7 +19,27 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/logo.png">
+
+  <!-- Custom CSS to reduce page margins -->
+  <style>
+    .container.is-max-desktop {
+      max-width: 75% !important;
+      margin: 0 auto;
+    }
+    
+    .container {
+      max-width: 75% !important;
+      margin: 0 auto;
+    }
+
+    /* Ensure good readability on very wide screens */
+    @media screen and (min-width: 1408px) {
+      .container.is-max-desktop,
+      .container {
+        max-width: 1100px !important;
+      }
+    }
+  </style>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
