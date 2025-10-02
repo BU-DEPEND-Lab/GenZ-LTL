@@ -46,6 +46,8 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
 
@@ -288,14 +290,21 @@
     <div class="columns is-centered">
       <div class="column">
         <h2 class="title is-2">Main Results</h2>
-        
+
         <!-- First image with caption -->
-        <div style="text-align: center; margin-bottom: 20px;">
+        <div style="text-align: center; margin-bottom: 30px;">
+          <img src="./static/images/ltl-specs.png" alt="Finite Horizon Tasks Results" style="max-width: 80%; height: auto;" />
+          <p style="margin-top: 8px;"><em>LTL specifications used for evaluation. 
+            For \(\varphi_{9-16}\) and \(\psi_{4-6}\), b, g, m, and y denote blue, green, magenta, and yellow</em></p>
+        </div>
+        
+        <!-- Second image with caption -->
+        <div style="text-align: center; margin-bottom: 30px;">
           <img src="./static/images/finite-horizon_tasks.png" alt="Finite Horizon Tasks Results" style="max-width: 100%; height: auto;" />
           <p style="margin-top: 8px;"><em>Finite Horizon Tasks: success rate η<sub>s</sub>, violation rate η<sub>v</sub>, and average steps μ to satisfy the specifications</em></p>
         </div>
         
-        <!-- Second image with caption -->
+        <!-- Third image with caption -->
         <div style="text-align: center; margin-bottom: 30px;">
           <img src="./static/images/infinite-horizon_tasks.png" alt="Infinite Horizon Tasks Results" style="max-width: 70%; height: auto;" />
           <p style="margin-top: 8px;"><em>Infinite Horizon Tasks: violation rate η<sub>v</sub> and average number of visits to accepting states μ<sub>acc</sub></em></p>
